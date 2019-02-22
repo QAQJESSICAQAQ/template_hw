@@ -1,3 +1,5 @@
-# template_hw
-hw practice for getting around with git. /n
-I modified the code i used for pic10b in this case.
+# GitIntro Practice
+Using git to track how I do the template vector class
+
+## Create new branch and solving non-fastforward merges
+
