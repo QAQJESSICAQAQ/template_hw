@@ -187,7 +187,7 @@ namespace Pic10b{
 	
 /** ************************ OPERATORS (nonmember) ************************ **/
 template<typename T>
-Pic10b::vector<T> operator*(T& a, const Pic10b::vector<T>& rhs ){
+Pic10b::vector<T> operator*(T a, const Pic10b::vector<T>& rhs ){
     Pic10b::vector<T> copy(rhs);
     for (size_t i = 0 ; i < rhs.size() ; ++i)
         copy[i]=a*copy[i];
