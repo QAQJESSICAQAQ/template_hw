@@ -219,6 +219,13 @@ Pic10b::vector<T> operator+(Pic10b::vector<T>& lhs, Pic10b::vector<T>& rhs ){
 }
 	
 	
+template<typename T>
+T compare(const Pic10b::vector<T>& lhs, const Pic10b::vector<T>& rhs ) {
+    T dot_product_diff=0;
+    dot_product_diff=lhs * lhs - rhs * rhs;
+    return dot_product_diff;
+    
+}
 	
 	
 	
