@@ -274,5 +274,12 @@ bool operator!=(const Pic10b::vector<std::string>& f , const Pic10b::vector<std:
     return a;
 }
 	
-	
+template<>
+std::ostream& operator<<( std::ostream& out, const Pic10b::vector<std::string>& v ){
+    std::cout<< "[";
+    for ( size_t i = 0 ; i < v.size()-1 ; ++i )
+        out <<" "<<v[i] << "," <<" ";
+    out<< v[v.size()-1]<< " ]";
+    return out;
+}	
 	
