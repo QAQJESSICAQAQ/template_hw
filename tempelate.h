@@ -227,7 +227,52 @@ T compare(const Pic10b::vector<T>& lhs, const Pic10b::vector<T>& rhs ) {
     
 }
 	
+
+template<typename T>
+bool operator<(const Pic10b::vector<T>& f , const Pic10b::vector<T>& g ){
+    return compare(f,g) < 0 ;
+}
+template<typename T>
+bool operator>(const Pic10b::vector<T>& f , const Pic10b::vector<T>& g ){
+    return compare(f,g) > 0 ;
+}
+template<typename T>
+bool operator<=(const Pic10b::vector<T>& f , const Pic10b::vector<T>& g ){
+    return compare(f,g) <= 0 ;
+}
+template<typename T>
+bool operator>=(const Pic10b::vector<T>& f , const Pic10b::vector<T>& g ){
+    return compare(f,g) >= 0 ;
+}
+template<typename T>
+bool operator==(const Pic10b::vector<T>& f , const Pic10b::vector<T>& g ){
+    return compare(f,g) == 0 ;
+}
+template<typename T>
+bool operator!=(const Pic10b::vector<T>& f , const Pic10b::vector<T>& g ){
+    return compare(f,g) != 0 ;
+}
 	
+
+//overloading <<
+template<>
+bool operator==(const Pic10b::vector<std::string>& f , const Pic10b::vector<std::string>& g ){
+    bool a=true;
+    for (size_t i = 0 ; i < g.size() ; ++i)
+        if (f[i]!=g[i])
+            a=false;
+    return a;
+}
+
+
+template<>
+bool operator!=(const Pic10b::vector<std::string>& f , const Pic10b::vector<std::string>& g ){
+    bool a=true;
+    for (size_t i = 0 ; i < g.size() ; ++i)
+        if (f[i]==g[i])
+            a=false;
+    return a;
+}
 	
 	
 	
