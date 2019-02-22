@@ -185,6 +185,38 @@ namespace Pic10b{
     }
 	
 	
+/** ************************ OPERATORS (nonmember) ************************ **/
+template<typename T>
+Pic10b::vector<T> operator*(T& a, const Pic10b::vector<T>& rhs ){
+    Pic10b::vector<T> copy(rhs);
+    for (size_t i = 0 ; i < rhs.size() ; ++i)
+        copy[i]=a*copy[i];
+    return copy;
+}
+
+template<>
+Pic10b::vector<std::string> operator*(std::string str, const Pic10b::vector<std::string>& rhs ){
+    Pic10b::vector<std::string> copy(rhs);
+    for (size_t i = 0 ; i < rhs.size(); ++i)
+        copy[i]=str+" "+copy[i];
+    return copy;
+}
+
+template<typename T>
+T operator*(const Pic10b::vector<T>& lhs, const Pic10b::vector<T>& rhs ){
+    T dot_product=0;
+    for (size_t i = 0 ; i < rhs.size() ; ++i)
+        dot_product+=lhs[i]*rhs[i];
+    return dot_product;
+}
+
+template<typename T>
+Pic10b::vector<T> operator+(Pic10b::vector<T>& lhs, Pic10b::vector<T>& rhs ){
+    Pic10b::vector<T> copy(rhs);
+    for (size_t i = 0 ; i < rhs.size() ; ++i)
+        copy[i]=lhs[i]+rhs[i];
+    return copy;
+}
 	
 	
 	
