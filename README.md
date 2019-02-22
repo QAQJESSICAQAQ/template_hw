@@ -1,3 +1,3 @@
 # template_hw
-hw practice for getting around with git.
+hw practice for getting around with git. /n
 I modified the code i used for pic10b in this case.
