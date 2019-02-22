@@ -102,6 +102,59 @@ namespace Pic10b{
        
     }
 	
+    /** *********************** OTHER MEMBERS *********************** **/
+   
+    template<typename T>
+    bool vector<T>::empty() const {
+        return the_size == 0;
+    }
+    
+    template<typename T>
+    size_t vector<T>::size() const {
+        return the_size;
+    }
+    
+    template<typename T>
+    size_t vector<T>::capacity() const {
+        return the_capacity;
+    }
+    
+    template<typename T>
+    T& vector<T>::operator[]( size_t index ){
+        return the_data[index];
+    }
+    
+    template<typename T>
+    T vector<T>::operator[]( size_t index ) const {
+        return the_data[index];
+    }
+    
+    template<typename T>
+    void vector<T>::push_back( T new_value ){
+        if ( the_size == the_capacity )
+            reserve( the_capacity + 1 );     // `the_data` is reassigned
+        
+        the_data[the_size++] = new_value;
+    }
+    
+    template<typename T>
+    void vector<T>::reserve( size_t new_capacity ){
+        if ( new_capacity > the_capacity ) {
+            if ( new_capacity <= 2 * the_capacity )
+                new_capacity = 2 * the_capacity;
+            
+            T* old_location = the_data;
+            
+            the_data = new T[new_capacity];
+            the_capacity = new_capacity;
+            
+            for ( size_t i = 0 ; i < the_size ; ++i )
+                the_data[i] = old_location[i];
+            
+            delete old_location;
+        }
+        
+    }
 	
 	
 	
