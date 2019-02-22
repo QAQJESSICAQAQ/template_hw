@@ -282,4 +282,8 @@ std::ostream& operator<<( std::ostream& out, const Pic10b::vector<std::string>& 
     out<< v[v.size()-1]<< " ]";
     return out;
 }	
+
+
+
+#endif
 	
