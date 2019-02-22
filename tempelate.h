@@ -4,6 +4,8 @@
 //  Created by Jinqi Song on 2019/02/21.
 // Libary file for a templated vector class
 
+//this class is based on an old non-templetated 
+//vector class we talked about in pic10b class
 
 
 #ifndef pic10b_vector_h
