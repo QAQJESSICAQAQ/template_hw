@@ -158,6 +158,31 @@ namespace Pic10b{
 	
 	
 	
+    /** ************************ OPERATORS (member) ************************ **/
+    template<typename T>
+    vector<T> vector<T>::operator*(T a ){
+        vector vec(*this);
+        for ( int i = 0 ; i < the_size ; ++i )
+            vec[i] =a* vec[i];
+        return vec;
+    }
+    
+ 
+        
+    template<typename T>
+    vector<T> vector<T>::operator+(const vector<T>& rhs ){
+        vector vec(*this);
+        for ( int i = 0 ; i < the_size ; ++i )
+            vec[i] =vec[i]+ rhs[i];
+        return vec;
+    }
+    
+    template<typename T>
+    vector<T>& vector<T>::operator+=( const vector<T>& rhs ){
+    for ( int i = 0 ; i < the_size ; ++i )
+        the_data[i] += rhs.the_data[i];
+        return *this;
+    }
 	
 	
 	
