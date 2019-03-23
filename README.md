@@ -8,5 +8,8 @@ When trying out and changing things that we wish will not be implement before we
 In the test branch, I managed to create a text file that is being put in gitignore.
 
 * [test_branch](https://github.com/QAQJESSICAQAQ/template_hw/blob/tests/readme.md) - link to the test branch
+
 ### Create new branch and solving non-fastforward merges
 When forgetting to pull before push, we might run into merging conflicts, if we change both the remote and the local at the same time.
+
+Also, there is no binary files included.
